@@ -2,7 +2,7 @@
 
 ## Overview 
 
-The aim of this project is to implement a PID (Proportional Integral Derivative) Controller that will help to navigate a virtual self-driving vehicle around a test track within a simulated environment. The contoller will receive real-time feedback from the environment comprised of the prevailing cross track error, steering angle and speed of the vehicle; these will be used to calculate the optimal throttle and steering angle that should be applied, which will then be relayed back to the environment and form part of the next feedback loop.
+The aim of this project is to implement a PID (Proportional Integral Derivative) Controller that will assist with navigating a virtual self-driving vehicle around a test track within a simulated environment. The contoller will receive real-time feedback from the environment comprised of the prevailing cross track error, steering angle and speed of the vehicle; these will be used to calculate the optimal throttle and steering angle that should be applied, which will then be relayed back to the environment and form part of the next feedback loop.
 
 The project must satisfy the following criteria:
 

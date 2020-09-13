@@ -28,8 +28,8 @@ Two PID controllers are implemented, one for controlling the steering angle of t
 The three parameters are defined as follows:
 
 - P: This sets the control weight proportionate to the size of the error, so larger errors result in larger magnitudes of feedback. Working alone this will correct for error size and but will result in the vehicle oscillating wildly and likely losing control and leaving the test track as speed increases
-- I: This accumulates the observed errors in the system and adjusts for these in order to account for biases in the system
-- D: This is a control related to the the error's rate of change, which can be used to effectivey dampen the observed oscillations
+- I: This accumulates the observed errors in the system, adjusting to account for biases in either direction
+- D: This is a control related to the the error's rate of change; it can be used to effectivey dampen observed oscillations
 
 Parameter optimsation was performed using a mixture of manual tuning and the Twiddle algorithm. The steps to set the parameters are outlined as follows:
 

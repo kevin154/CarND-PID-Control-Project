@@ -21,7 +21,7 @@ There are four main scripts associated with the project:
 - helpers.h: Some utility functions for interpreting the sensor information
 
 
-## Implementation and Parameter Tuning
+## The PID Controllers
 
 Two PID controllers are implemented, one for controlling the steering angle of the vehicle and the other for controlling the speed. In order to effectively control the vehicle and prevent excessive oscillations the three PID Controller parameters P, I and D corresponding to the weights placed on the proportional, integral, and derivative errors respectively need to be tuned appropriately.
 
@@ -30,6 +30,9 @@ The three parameters are defined as follows:
 - P: This sets the control weight proportionate to the size of the error, so larger errors result in larger magnitudes of feedback. Working alone this will correct for error size and but will result in the vehicle oscillating wildly and likely losing control and leaving the test track as speed increases
 - I: This accumulates the observed errors in the system, adjusting to account for biases in either direction
 - D: This is a control related to the the error's rate of change; it can be used to effectivey dampen observed oscillations
+
+
+## Parameter Optimisation
 
 Parameter optimsation was performed using a mixture of manual tuning and the Twiddle algorithm. The steps to set the parameters are outlined as follows:
 

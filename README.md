@@ -10,19 +10,43 @@ The project must satisfy the following criteria:
 * The PID controller must be implemented as instructed within the preceding lessons
 * The PID controller algorithm parameters must be tuned appropriately to ensure that the vehicle does not oscillate wildly around the test track
 
+
 ## Code Layout
 
-There are four main files associated with the project:
+There are four main scripts associated with the project:
 
-main.cpp: The central interface to the simulator. Receives live data from the environment and returns the calculated steering angle and throttle values 
-pid.hpp: The outline of the PID class, which contains functions needed to calculate and optimise the outputs from the PID controller
-car.cpp: The implementations of the functions within the PID class
-helpers.h: Some utility functions for interpreting the sensor information
+* main.cpp: The central interface to the simulator. Receives live data from the environment and returns the calculated steering angle and throttle values 
+* pid.h: The outline of the PID class, which contains functions needed to calculate and optimise the outputs from the PID controller
+* pid.cpp: The implementations of the functions within the PID class
+* helpers.h: Some utility functions for interpreting the sensor information
 
 
-## Implementation
+## Implementation and Parameter Tuning
 
-Two PID controllers were implemented, one for controlling the steering angle of the vehicle and the other for controlling the speed. In order to prevent excessive oscillations the three PID Controller parameters (corresponding to the weights placed on the proportional, integral, and derivative errors respectively) needed to be fine tuned; this was carried out using a mixture of manual tuning from observing test runs and using the Twiddle optimisation algorithm. 
+Two PID controllers are implemented, one for controlling the steering angle of the vehicle and the other for controlling the speed. In order to effectively control the vehicle and prevent excessive oscillations the three PID Controller parameters P, I and D corresponding to the weights placed on the proportional, integral, and derivative errors respectively need to be fine tuned.
+
+The three parameters are outlined as follows:
+
+* P:
+* I: 
+* D: 
+
+
+
+this was achieved using a mixture of manual tuning and the Twiddle optimisation algorithm. 
+
+As a starting point the parameters were set to some sample figures taken from the lectures:
+
+* P = 0.3
+* I = 0.0004
+* D = 3
+
+These were observed to be a good starting point - the vehicle stayed on the track but tended to oscillate. The various parameters were manually tuned 
+
+
+
+
+
 
 
 

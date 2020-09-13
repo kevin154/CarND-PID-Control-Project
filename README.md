@@ -43,11 +43,11 @@ Parameter optimsation was performed using a mixture of manual tuning and the Twi
 - Adjust the P parameter until the observed vehicle behaviour is a steady state of oscillations
 - Increase the D parameter until the oscillations are sufficiently dampened 
 - Use the Twiddle algorithm to fine-tune the parameters. In order to account for noise in the system the errors are accumulated over 100 simulation loops before the Twiddle algorithm is applied. In an ideal setting the parameters would be updated upon each complete lap however this is much too time consuming to be realistically considered for the purposes of the project. 
-- The final steering PID parameters for were set as follows:
+- The final steering PID parameters were chosen as follows:
   - P = 0.15
   - I = 0.0001
   - D = 3.5
-- The final speed PID parameters for were set as follows:
+- The final speed PID parameters were chosen as follows:
   - P = 0.3
   - I = 0.0004
   - D = 1

@@ -6,19 +6,19 @@ The aim of this project is to implement a PID (Proportional Integral Derivative)
 
 The project must satisfy the following criteria:
 
-* The vehicle must successfully complete a lap of the test track
-* The PID controller must be implemented as instructed within the preceding lessons
-* The PID controller algorithm parameters must be tuned appropriately to ensure that the vehicle does not oscillate wildly around the test track
+- The vehicle must successfully complete a lap of the test track
+- The PID controller must be implemented as instructed within the preceding lessons
+- The PID controller algorithm parameters must be tuned appropriately to ensure that the vehicle does not oscillate wildly around the test track
 
 
 ## Code Layout
 
 There are four main scripts associated with the project:
 
-* main.cpp: The central interface to the simulator. Receives live data from the environment and returns the calculated steering angle and throttle values 
-* pid.h: The outline of the PID class, which contains functions needed to calculate and optimise the outputs from the PID controller
-* pid.cpp: The implementations of the functions within the PID class
-* helpers.h: Some utility functions for interpreting the sensor information
+- main.cpp: The central interface to the simulator. Receives live data from the environment and returns the calculated steering angle and throttle values 
+- pid.h: The outline of the PID class, which contains functions needed to calculate and optimise the outputs from the PID controller
+- pid.cpp: The implementations of the functions within the PID class
+- helpers.h: Some utility functions for interpreting the sensor information
 
 
 ## Implementation and Parameter Tuning
@@ -27,27 +27,29 @@ Two PID controllers are implemented, one for controlling the steering angle of t
 
 The three parameters are outlined as follows:
 
-* P:
-* I: 
-* D: 
+- P: This sets the control weight proportionate to the size of the error, so larger errors result in larger magnitudes of feedback. Working alone this will correct for error size and but will result in the vehicle oscillating wildly and likely losing control as speed increases
+- I: This accumulates the observed errors in the system and adjusts for these in order to account for biases in the system
+- D: This parameter controls the error's rate of change, resulting in dampening the observed oscillations
 
+The final parameter set was achieved using a mixture of manual tuning and the Twiddle optimisation algorithm. The steps to tune the parameters were carried out as follows:
 
+- Set the baseline parameter values to some sample figures taken from the lectures:
+  - P = 0.3
+  - I = 0.0004
+  - D = 3
+- Adjust the P parameter until the observed vehicle behaviour is a steady set of oscillations
+- Increase the D parameter until the oscillations are dampened 
+- Use the Twiddle algorithm to fine-tune the parameters. In order to account for noise in the system the errors were accumulated over 100 simulation loops before the Twiddle algorithm was applied
+- The final steering PID parameters for were set as follows:
+  - P = 0.15
+  - I = 0.0001
+  - D = 3.5
+  - The final speed PID parameters for were set as follows:
+  - P = 0.3
+  - I = 0.0004
+  - D = 1
 
-this was achieved using a mixture of manual tuning and the Twiddle optimisation algorithm. 
-
-As a starting point the parameters were set to some sample figures taken from the lectures:
-
-* P = 0.3
-* I = 0.0004
-* D = 3
-
-These were observed to be a good starting point - the vehicle stayed on the track but tended to oscillate. The various parameters were manually tuned 
-
-
-
-
-
-
+A sample of the final result is displayed in the video; we can observe that the vehicle is able to traverse the test track at a constant target speed of 30m/h in a similar way that one would expect in a real-life environent.
 
 
 ![](/output/PID-controller.gif)

@@ -23,7 +23,7 @@ There are four main scripts associated with the project:
 
 ## Implementation and Parameter Tuning
 
-Two PID controllers are implemented, one for controlling the steering angle of the vehicle and the other for controlling the speed. In order to effectively control the vehicle and prevent excessive oscillations the three PID Controller parameters P, I and D corresponding to the weights placed on the proportional, integral, and derivative errors respectively need to be fine tuned.
+Two PID controllers are implemented, one for controlling the steering angle of the vehicle and the other for controlling the speed. In order to effectively control the vehicle and prevent excessive oscillations the three PID Controller parameters P, I and D corresponding to the weights placed on the proportional, integral, and derivative errors respectively need to be tuned appropriately.
 
 The three parameters are defined as follows:
 
